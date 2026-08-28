@@ -3,3 +3,4 @@ dependencies:
   - perl
 url: https://github.com/cowsay-org/cowsay/archive/refs/tags/v3.8.4.tar.gz
 download_method: http
+checksum: c15bc10712835d3a9bcda780dc9453362567bf48d1185905dc7ef2334d79aadd
