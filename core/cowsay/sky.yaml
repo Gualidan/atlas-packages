@@ -1,6 +1,17 @@
 name: cowsay
+version: 3.8.4
+architecture: x86_64
 dependencies:
   - perl
-url: https://github.com/cowsay-org/cowsay/archive/refs/tags/v3.8.4.tar.gz
-download_method: http
-checksum: c15bc10712835d3a9bcda780dc9453362567bf48d1185905dc7ef2334d79aadd
+sources:
+  url: https://github.com/cowsay-org/cowsay/archive/refs/tags/v3.8.4.tar.gz
+  sha256: c15bc10712835d3a9bcda780dc9453362567bf48d1185905dc7ef2334d79aadd
+phases:
+  prepare:
+    - test
+  build:
+    - rz
+  check:
+    - make test
+  package:
+    - make install
