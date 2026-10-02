@@ -1,4 +1,19 @@
+schema: 1
 name: perl
-url: https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz
-download_method: http
-checksum:
+version: 5.44.0
+release: 1
+architecture: x86_64
+
+source:
+  url: https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz
+  checksum:
+
+prepare: |
+  cd "$srcdir"
+  ./Configure -des -Dprefix=/usr
+
+package: |
+  make DESTDIR="$pkgdir" install
+
+check: |
+  make test
